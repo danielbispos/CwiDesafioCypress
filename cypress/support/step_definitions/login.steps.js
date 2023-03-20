@@ -39,10 +39,26 @@ Then("eu obtenho a mensagem de erro de usuário", () => {
     loginPage.validaLoginSemUsuario()
 })
 
-When("eu informo o usuário e/ou a senha inválidos e aciono o botão de login", () => {
+When("eu informo o usuário ou a senha inválidos e aciono o botão de login", () => {
     loginPage.fazerLoginComUsuarioSenhaInvalidos()
 })
 
 Then("eu obtenho a mensagem de erro de usuário inválido", () => {
     loginPage.validaLoginComUsuarioSenhaInvalidos()
+})
+
+When("eu informo um usuário com acesso bloqueado e aciono o botão de login", () => {
+    loginPage.fazerLoginComUsuarioBloqueado()
+})
+
+Then("eu obtenho a mensagem de erro de usuário bloqueado", () => {
+    loginPage.validaLoginComUsuarioBloqueado()
+})
+
+When("eu insiro o caminho da página de produtos", () => {
+    loginPage.fazerLoginSemUsuarioAutenticado()
+})
+
+Then("eu obtenho a mensagem de erro de usuário não autenticado", () => {
+    loginPage.validaLoginSemUsuarioAutenticado()
 })
